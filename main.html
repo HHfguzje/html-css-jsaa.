@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trang Chu</title>
+    <style type="text/css">
+    *{
+    box-sizing: border-box;
+    }
+    body{
+        background: url(anh/bg.png);
+        background-size: cover;
+        background-position-y: -10;
+    }
+    div{
+    display: block;
+    }
+    .index .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 50px;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    .content-img{
+        color: rgb(0, 0, 0);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        background-color: aqua;
+        border-radius: 55%;
+    }
+    .content-img img{
+        width: 80px;
+        height: 80px;
+        display: block;
+        position: relative;
+        left: 60px;
+        top: 50px;
+    }
+    ul.root li{
+            list-style: none;
+            position: relative;
+        }
+        ul.root li a{
+		padding: 0px 12px 0px 12px; 
+		line-height: 40px;
+		display: block;
+        }
+       ul.root li:hover{
+        background: rgb(184, 71, 180);
+       }
+       ul.menu2
+	{
+		width: 200px;
+		background: #605858;
+		min-height: 40px;
+		display: none;
+		position: absolute;
+	}
+	ul.menu2 li{
+			list-style: none;
+    }
+    ul.menu2 li a{
+			display: block;
+			line-height: 40px;
+			text-indent: 10px;
+            color: rgb(0, 0, 0);
+            z-index: 5;
+		}
+	ul.root li:hover ul.menu2{
+			display: block;
+			
+		}
+
+    </style>   
+     </head>
+     <div class="menu">
+        <ul class="root">
+            <li> <a href="#">
+                <span style="font-size: 40px;
+                background-color: aqua;">☰</span>
+            </a>
+            <ul class="menu2">
+                <li><a href="main.html">Trang chủ</a></li>
+                <li><a href="doimk.html"> Đổi mật khẩu</a> </li>
+                <li> <a href="doiavt.html">Thay avatar</a> </li>
+                <li> <a href="index.html">Đăng xuất</a> </li>
+            </ul>
+            </li>
+       </ul>
+
+    </div>
+    <hr>
+    <br><br>
+    <section class="index" id="index-action">
+        <div class="container">
+            <div class="content">
+                <div class="content-img">
+                    <a href="newfeed.html"><img src="anh/news.png" alt=""></a>
+                    <a href="newfeed.html">
+                        <p>BẢNG TIN</p>
+                    </a>
+                </div>
+                <div class="content-img">
+                    <a href="boxchat.html"><img src="anh/message.png" alt=""></a>
+                    <a href="boxchat.html">
+                        <p>TIN NHẮN</p>
+                    </a>
+                </div>
+                <div class="content-img">
+                    <a href="setting.html"><img src="anh/setting.png" alt=""></a>
+                    <a href="setting.html">
+                        <p>CÀI ĐẶT</p>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>  
+</body>
+</html>

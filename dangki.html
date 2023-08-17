@@ -1,0 +1,135 @@
+
+<!doctype html>
+<html>
+ <head>
+ <title>Đăng kí</title>
+ <style type="text/css">
+    
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    overflow: hidden;
+    background: url('anh/bg.png');
+    background-size: cover;
+}
+.to {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: minmax(100px,auto);
+}
+ 
+.form {
+    border: 1px solid #80808000;
+    grid-column: 6/9;
+    grid-row: 3;
+    height: 470px;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 14px 0px grey;
+    background-color: white;
+}
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+label {
+    margin-left: -126px;
+    display: block;
+    font-weight: lighter;
+ 
+}
+input{
+    display: block;
+    border-bottom: 2px solid #00BCD4;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    outline-style: none;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 70%;
+}
+ 
+input#submit {
+    padding: 7px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    background: #ff4584;
+    left: 70px;
+}
+ </style>
+ </head>
+ <body>
+ <div class="to">
+    <div class="form">
+        <h2>Đăng ký tài khoản</h2>
+        <label style="margin-left: -150px;">Họ và tên</label>
+        <input type="text" name="hoten" id="hoten">
+        <label style="margin-left: -110px;">Tên người dùng</label>
+        <input type="text" name="Tennguoidung" id="username">
+        <label style="margin-left: -150px;" >Mật khẩu</label>
+        <input type="text" name="matkhau" id="password">
+        <label style="margin-left: -80px;">Xác nhận mật khẩu</label>
+        <input type="text" name="matkhau" id="cfpassword">
+        <label>Số điện thoại</label>
+        <input type="text" name="sdt" id="sdt"> 
+        <a><input id="submit" type="submit" name="submit" value="Đăng kí"></a>
+
+    </div> 
+ </div>
+ <script>
+    document.getElementById('submit').onclick=function signin(){
+        const hoten = document.getElementById('hoten');
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const cfpassword = document.getElementById("cfpassword");
+        const sdt = document.getElementById('sdt');
+        var flag = false;
+        // if ((hoten.value.length >=9) && (username.value.length >= 6)
+        // && (password.value.length >= 8) && (sdt.value.length == 10)
+        // && (cfpassword.value == password.value)){
+        //     flag = true;
+        // } 
+        if (  (username.value.length < 6)
+        && (password.value.length < 8)) {
+            alert("Họ và tên >= 9 kí tự, username>= 6 kí tự<br>Mật khâu >= 8 kí tự, sdt phải đúng 10 kí tự");
+        } else if (cfpassword.value != password.value){
+                alert("Vui lòng xác nhận lại mật khẩu");
+        } else {
+            flag = true;
+        }
+         //kiem tra trung lap
+                if (localStorage.getItem("username") == username.value){
+                    alert("tài khoản bị trùng lặp");
+                    flag = false;
+                }
+        if (flag == true){
+            hoten_data = hoten.value;
+            username_data = username.value;
+            password_data = password.value;
+            sdt_data = sdt.value;
+
+            localStorage.setItem("hoten", hoten_data);
+            localStorage.setItem("username", username_data);
+            localStorage.setItem("password", password_data);
+            localStorage.setItem("sdt", sdt_data);
+            alert("Đăng kí thành công");
+            window.location  = "index.html";
+        } else {
+            alert("Đăng kí không thành công");
+        };
+};
+ </script>
+ </body>

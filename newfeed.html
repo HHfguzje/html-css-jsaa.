@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+    <title>Bảng tin</title>
+</head>
+<style type="text/css">
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+    body{
+        background: url(anh/bg.png);
+        background-size: cover;
+        background-position-y: -10;
+    }
+    div{
+    display: block;
+    }
+    .index .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 50px;
+    }
+ 
+    a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    .content-img{
+        color: rgb(0, 0, 0);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        background-color: aqua;
+        border-radius: 55%;
+    }
+    .content-img img{
+        width: 80px;
+        height: 80px;
+        display: block;
+        position: relative;
+        left: 60px;
+        top: 50px;
+    }
+    ul.root li{
+            list-style: none;
+            position: relative;
+        }
+        ul.root li a{
+		padding: 0px 12px 0px 12px; 
+		line-height: 40px;
+		display: block;
+        }
+       ul.root li:hover{
+        background: rgb(184, 71, 180);
+       }
+       ul.menu2
+	{
+		width: 200px;
+		background: #605858;
+		min-height: 40px;
+		display: none;
+		position: absolute;
+	}
+	ul.menu2 li{
+			list-style: none;
+    }
+    ul.menu2 li a{
+			display: block;
+			line-height: 40px;
+			text-indent: 10px;
+            color: rgb(0, 0, 0);
+
+		}
+	ul.root li:hover ul.menu2{
+			display: block;
+			
+		}
+:root {
+    --body-color: #efefef;
+    --nav-color: #1876f2;
+    --bg-color: #fff;
+}
+
+
+body {
+    background: var(--body-color);
+    transition: background 0.3s;
+}
+
+.write-post-container {
+    color: #626262;
+    background-color: var(--bg-color);
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.post-upload-textarea {
+    padding: 20px 0px 0px 55px;
+}
+
+.post-upload-textarea textarea {
+    width: 100%;
+    border: 0px;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+}
+
+.add-post-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.add-post-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #626262;
+    font-size: 13px;
+}
+
+.add-post-links a img {
+    width: 20px;
+    margin-right: 13px;
+}
+
+.status-field-container {
+    margin-top: 20px;
+}
+
+.status-field img {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.status-field p {
+    font-size: 14px;
+    margin: 20px 0px 5px 0px;
+    text-transform: capitalize;
+    color: #626262;
+}
+
+.status-field p a {
+    color: var(--nav-color);
+}
+
+.activity-icons div {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.activity-icons div img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.post-reaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.post-profile-picture img {
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 4px;
+
+}
+
+.post-profile-picture {
+    display: flex;
+    align-items: center;
+}
+
+button.btn-LoadMore {
+    margin: 20px auto;
+    display: flex;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #9a9a9a;
+    color: #626262;
+    background: transparent;
+    border-radius: 4px;
+}
+</style>
+<body>
+    <div class="menu">
+        <ul class="root">
+            <li> <a href="#">
+                <span style="font-size: 40px;
+                background-color: aqua;">☰</span>
+            </a>
+            <ul class="menu2">
+                <li><a href="main.html">Trang chủ</a></li>
+                <li><a href="doimk.html"> Đổi mật khẩu</a> </li>
+                <li> <a href="doiavt.html">Thay avatar</a> </li>
+                <li> <a href="index.html">Đăng xuất</a> </li>
+            </ul>
+            </li>
+       </ul>
+
+    </div>
+    <hr>
+    <br><br>
+    <!-- bảng tin -->
+     <div class="write-post-container">
+       <div class="user-profile">
+           <img src="anh/avatar.png" alt="">
+                    <div>
+                        <p>You</p>
+                        <small>Public</small>
+                    </div>
+                </div>
+
+                <div class="post-upload-textarea">
+                    <textarea name="" placeholder="Bạn có điều gì muốn nói?" id="" cols="30" rows="3"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="anh/live-video.png" alt="">Live Video</a>
+                        <a href="#"><img src="anh/photo.png" alt="">Photo/Video</a>
+                        <a href="#"><input type="submit" value="Đăng" id="submit" style="background: #ff4584;
+                            color: #fff;
+                            outline: none;
+                            border: none;
+                            font-size: 30px;
+                            font-weight: 500;
+                            cursor: pointer; "></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-field-container write-post-container">
+                <div class="user-profile-box">
+                    <div class="user-profile">
+                        <img src="anh/siu.jpg" alt="">
+                        <div>
+                            <p> Cristiano Ronaldo</p>
+                            <small>Public</small>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                    </div>
+                </div>
+                <div class="status-field">
+                    <p>siuuu
+                        <a href="#">#ronaldowc2022</a> </p>
+                    <img src="images/feed-image-1.png" alt="">
+
+                </div>
+                <div class="post-reaction">
+                    <div class="activity-icons">
+                        <div ><img src="anh/like.png" alt="" id="like">120</div>
+                        <div><img src="anh/comments.png" alt="">52</div>
+                        <div><img src="anh/share.png" alt="">35</div>
+                    </div>
+                    <div class="post-profile-picture">
+                        <img src="images/profile-pic.png " alt=""> <i class=" fas fa-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn-LoadMore" onclick="LoadMoreToggle()">Load More</button>
+        </div>
+        <script>
+            var lai = "anh/like-blue.png";
+            document.getElementById('like').onclick()=function(){
+                document.getElementById('like').src = lai.src;
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>doimk</title>
+    <style type="text/css">
+    *{
+    box-sizing: border-box;
+    }
+    div{
+    display: block;
+    }
+    body{
+        background: url("anh/bg.png");
+        background-size: cover;
+    }
+    .index .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 50px;
+    }
+    .content-img img{
+        width: 100px;
+        height: 100px;
+        left: 20px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .content-img{
+        color: red;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+    ul.root li{
+            list-style: none;
+            position: relative;
+        }
+        ul.root li a{
+		padding: 0px 12px 0px 12px; 
+		line-height: 40px;
+		display: block;
+        }
+       ul.root li:hover{
+        background: rgb(184, 71, 180);
+       }
+       ul.menu2
+	{
+		width: 200px;
+		background: #605858;
+		min-height: 40px;
+		display: none;
+		position: absolute;
+	}
+	ul.menu2 li{
+			list-style: none;
+    }
+    ul.menu2 li a{
+			display: block;
+			line-height: 40px;
+			text-indent: 10px;
+            color: rgb(0, 0, 0);
+
+		}
+	ul.root li:hover ul.menu2{
+			display: block;
+			
+		}
+    .dmk h1{
+        color: #607d8b;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        border-bottom: 4px solid #ff4584;
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+    #submit{
+        background: #ff4584;
+        color: #fff;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        cursor: pointer; 
+    }
+    .to {
+    display: block;
+    left: 400px;
+    position: relative;
+}
+ 
+.form {
+    border: 1px solid #80808000;
+   
+    height: 470px;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 14px 0px grey;
+    background-color: white;
+}
+    </style>   
+     </head>
+     <body>
+     <!-- header -->
+     <div class="menu">
+        <ul class="root">
+            <li> <a href="#">
+                <span class="username" style="font-size: 40px;
+                background-color: aqua;">☰</span>
+            </a>
+            <ul class="menu2">
+                <li><a href="main.html">Trang chủ</a></li>
+                <li ><a href="doimk.html"> Đổi mật khẩu</a> </li>
+                <li> <a href="doiavt.html">Thay avatar</a> </li>
+                <li> <a href="login.html">Đăng xuất</a> </li>
+            </ul>
+            </li>
+       </ul>
+    </div>
+    <hr>
+    <br><br>
+    <!-- doi mk -->
+    <div class="to">
+        <div class="form">
+            <div class="dav">
+                <div class="dmk">
+                    <h1>ĐỔI MẬT KHẨU: </h1>
+                    <br>
+                    <strong>Nhập mật khẩu hiện tại:</strong><br>
+                    <input type="password" value="" id="id1">
+                    <br><br>
+                    <strong >Nhập mật khẩu mới:</strong><br>
+                    <input type="password" value="" id="id2">
+                    <br><br>
+                    <strong >Xác nhận mật khẩu hiện mới:</strong><br>
+                    <input type="passwords" value="" id="id3">
+                    <br>
+                    <br>
+                    <input type="button" id="submit" value="Thay đổi" >
+                    </div>
+                    <br>
+                    <small style="color: red;">Chú ý: Bạn nên sử dụng mật khẩu mạnh mà mình chưa sử dụng ở đâu khác!!!</small>
+        </div> 
+        </div>
+
+<!-- scirpt -->
+    <script>
+       document.getElementById("submit").onclick=function(){
+        const mk=document.getElementById('id1');
+        const nmk=document.getElementById('id2');
+        const nmk1 = document.getElementById('id3');
+        if (localStorage.getItem("password") == mk.value){
+            if (nmk == nmk1){
+                localStorage.getItem("password") = nmk.value;
+                alert("Đổi mật khẩu thành công");
+            }
+        }
+       }
+    </script>
+
+</body>
+</html>
